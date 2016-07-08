@@ -1,3 +1,5 @@
+//new_kind_of_CMD  to find where to add new commands
+
 package com.example.wy_black_develop;
 
 import java.text.SimpleDateFormat;
@@ -448,10 +450,10 @@ public class AmoComActivity extends Activity implements View.OnClickListener,OnC
 		Excute.Append_Unit(M);
 	}
 	
-	private static String Return_Interprete_Wrong = "Recognize_Wrong";
-	private static String Return_Interprete_Finished = "Finished";
+	private static String Return_matchport_Wrong = "Matching_Wrong";
+	private static String Return_matchport_Finished = "Finished";
 	private static String Recognize_Head = "WyBlack:";
-	private static String Interprete() {
+	private static String matchport() {
 		//Scaned_Code = Do_Text.getText().toString();
 		if (Scaned_Code.length() >= Recognize_Head.length() && Scaned_Code.startsWith(Recognize_Head)) {
 			int Num_Of_Cmd;
@@ -507,13 +509,14 @@ public class AmoComActivity extends Activity implements View.OnClickListener,OnC
 					Excute.Append_Unit(A);
 					Excute.Append_Unit(B);
 				}
+				//new_kind_of_CMD
 			}
 			//Excute.Show_All_Info();
 			Excute.Start_Running("Excuting");
-			return Return_Interprete_Finished;
+			return Return_matchport_Finished;
 		}
 		else {
-			return Return_Interprete_Wrong;
+			return Return_matchport_Wrong;
 		}
 	}
 	private static String[] Find_Need_Port(String[] A) {	
@@ -526,11 +529,36 @@ public class AmoComActivity extends Activity implements View.OnClickListener,OnC
 			if (Is_Find_And_Link(A[i])) {
 				Need_Port[i] = Get_Unit_Find_And_Link1(A[i]).Find_Unit;
 				//Show(Need_Port[i]);
-
 			}
+			//new_kind_of_CMD
 		}
 		return Need_Port;
 	}
+	
+	private static boolean Is_Legel (String Code) {
+		if (Code.length() >= Recognize_Head.length() && Code.startsWith(Recognize_Head)){
+			int Num_Of_Cmd;
+			String Code1 = Code.substring(Recognize_Head.length());
+			Num_Of_Cmd = Code1.split("&").length;
+			String[] Cmd_Array = new String[Num_Of_Cmd];
+			Cmd_Array = Code1.split("&");
+			//Code1是分割后的逐条命令，接着对他们逐一审查即可
+			for (int i=0; i<Num_Of_Cmd; i++) {
+				if (Is_Find_And_Link(Cmd_Array[i])){
+					continue;
+				}
+				//new_kind_of_CMD
+				return false;
+			}
+			//所有的命令均可被识别，则返回true
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	
 	private static boolean Is_Find_And_Link(String x) {
 		if (! x.startsWith("Find(")) return false;
 		String x1 = x.substring("Find(".length());
@@ -668,9 +696,9 @@ public class AmoComActivity extends Activity implements View.OnClickListener,OnC
 			for (int i=0; i<13; i++) {
 				Port_Array[i] = Excute.Get_Unit(i).Re_Ask_Sub;
 			}
-			String mBack = Interprete();
+			String mBack = matchport();
 			if (mBack != "Finished") {
-				Show("Interprete: " + mBack);
+				Show("matchport: " + mBack);
 				return ;
 			}
 			//返回finished了，下一步开始工作
