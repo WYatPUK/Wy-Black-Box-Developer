@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!-- 该文件是AboutActivity.java文件所使用的布局文件 -->
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+	    >
+
+		<TextView android:id="@+id/about_text_help"
+            android:layout_weight= "2"  
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+			android:ellipsize="start"
+			android:maxLines="10000"
+			android:maxLength = "100000" 				
+			android:scrollHorizontally="true"
+			android:singleLine="false" 
+			android:fadeScrollbars="false"				
+			android:scrollbars="vertical"
+            android:textSize="24sp"     
+        />  
+        
+        </LinearLayout>		
+		
+
+
+
+		
+		

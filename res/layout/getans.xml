@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView 
+        android:id="@+id/receive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""/>
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="输入返回的信息"/>
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <Button 
+        android:id="@+id/send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="send"
+        />
+    <Button
+        android:id="@+id/unkowned_Cmd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="unkowned_cmd"
+        />
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit_Found"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/return_Found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="auto_Found"/>
+    </LinearLayout>      
+    <Button
+        android:id="@+id/return_Link_Finished"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Link_Finished"/> 
+        
+    <Button 
+        android:id="@+id/return_Confirmed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirmed"/>
+    
+    <Button 
+        android:id="@+id/return_Auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Auto"/>
+
+</LinearLayout>
