@@ -60,7 +60,6 @@ public class AmoComActivity extends Activity implements View.OnClickListener,OnC
 	//新增变量
 	private static String[] Port_Array;
 	private static Excute_Class Excute;
-	private static int Num_of_Received;
 	private static Like_BLE BLE;
 	private ToggleButton mToggleButton;  
 	//结束新增
@@ -117,7 +116,6 @@ public class AmoComActivity extends Activity implements View.OnClickListener,OnC
 		//新增
 		Excute = new Excute_Class(AmoComActivity.this);
 		Port_Array = new String[13];
-		Num_of_Received = 0;
 		BLE = new Like_BLE();
 		mToggleButton = (ToggleButton) findViewById(R.id.toggleButton1); //获取到控件  
 		mToggleButton.setOnCheckedChangeListener(this);//添加监听事件  
@@ -638,7 +636,6 @@ public class AmoComActivity extends Activity implements View.OnClickListener,OnC
 		return true;
 	}
 	public static void cb(final String x) {
-		Num_of_Received++;
 		Excute.BLE_CB(x);
 		//Show(x);
 	}
