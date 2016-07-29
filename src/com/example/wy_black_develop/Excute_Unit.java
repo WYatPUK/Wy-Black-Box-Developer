@@ -57,7 +57,7 @@ public class Excute_Unit {
 		return true;
 	}
 	public void Generate_Find_Unit(){
-		Send_String = "Find:" + Translate_hardware.Long_To_Standard(Find_Target) + Find_Unit + "@" + Port + "$";
+		Send_String = "#" + "Find:" + Translate_hardware.Long_To_Standard(Find_Target) + Find_Unit + "@" + Port + "$";
 	}
 	boolean Set_Link_Unit(String Link_) {
 		if (Type==Type_Link && Link_.length()==4) {
@@ -67,11 +67,11 @@ public class Excute_Unit {
 		return true;
 	}
 	public void Generate_Link_Unit(){
-		Send_String = "Link:" + Link + "@" + Port + "$";
+		Send_String = "#" + "Link:" + Link + "@" + Port + "$";
 	}
 	boolean Set_Ask_Unit(String mPort) {
 		if (Type==Type_Ask && mPort.length()==1) {
-			Send_String = "Ask" + "@" + mPort + "$";
+			Send_String = "#" + "Ask" + "@" + mPort + "$";
 		}
 		return true;
 	}
@@ -94,7 +94,7 @@ public class Excute_Unit {
 				Re_Find0 = x;
 				if (Handle_Find_Receive(x.substring(x.indexOf(':') + 1))) return Wrong;
 				Order = 1;
-				Send_String = "Confirm" + "@" + Port + "$";
+				Send_String = "#" + "Confirm" + "@" + Port + "$";
 				return Stay;
 			}
 			else if (Order==1 && x.equals("Confirmed")) {
