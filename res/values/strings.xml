@@ -168,5 +168,6 @@
     <string name="RecognizeCmd_Waiting">Waiting for Recognize Commands</string>
     <string name="GetInfo_Waiting">Waiting for Get Information</string>
     <string name="Excute_Waiting">Wating for Excuting</string>
+    <string name="ClearAll">CA</string>
 
 </resources>

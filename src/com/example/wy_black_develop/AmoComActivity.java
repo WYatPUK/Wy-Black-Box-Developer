@@ -85,6 +85,7 @@ public class AmoComActivity extends Activity implements View.OnClickListener,OnC
 		findViewById(R.id.button_Com_excute).setOnClickListener(this);
 		findViewById(R.id.button_Com_scan).setOnClickListener(this);
 		findViewById(R.id.button_send).setOnClickListener(this);
+		findViewById(R.id.button_Com_ClearAll).setOnClickListener(this);
 
 		Intent intent = getIntent();
 		Bundle bundle = intent.getExtras();
@@ -295,7 +296,14 @@ public class AmoComActivity extends Activity implements View.OnClickListener,OnC
 			Ask_All_Generate();
 			Excute.Start_Running("Initialize");
 			break;
+		case R.id.button_Com_ClearAll:
+			Excute.Stop();
+			Excute.Clear_Unit();
+			Clear_All_Generate();
+			Excute.Start_Running("ClearAll");
+			break;
 		}
+		
 			
 	}
 	
@@ -449,6 +457,48 @@ public class AmoComActivity extends Activity implements View.OnClickListener,OnC
 		M.Set_Ask_Unit("C");
 		Excute.Append_Unit(M);
 	}
+	private void Clear_All_Generate(){
+		Excute_Unit A = new Excute_Unit(Excute_Unit.Type_Clear);
+		A.Set_Clear_Unit("0");
+		Excute.Append_Unit(A);
+		Excute_Unit B = new Excute_Unit(Excute_Unit.Type_Clear);
+		B.Set_Clear_Unit("1");
+		Excute.Append_Unit(B);
+		Excute_Unit C = new Excute_Unit(Excute_Unit.Type_Clear);
+		C.Set_Clear_Unit("2");
+		Excute.Append_Unit(C);
+		Excute_Unit D = new Excute_Unit(Excute_Unit.Type_Clear);
+		D.Set_Clear_Unit("3");
+		Excute.Append_Unit(D);
+		Excute_Unit E = new Excute_Unit(Excute_Unit.Type_Clear);
+		E.Set_Clear_Unit("4");
+		Excute.Append_Unit(E);
+		Excute_Unit F = new Excute_Unit(Excute_Unit.Type_Clear);
+		F.Set_Clear_Unit("5");
+		Excute.Append_Unit(F);
+		Excute_Unit G = new Excute_Unit(Excute_Unit.Type_Clear);
+		G.Set_Clear_Unit("6");
+		Excute.Append_Unit(G);
+		Excute_Unit H = new Excute_Unit(Excute_Unit.Type_Clear);
+		H.Set_Clear_Unit("7");
+		Excute.Append_Unit(H);
+		Excute_Unit I = new Excute_Unit(Excute_Unit.Type_Clear);
+		I.Set_Clear_Unit("8");
+		Excute.Append_Unit(I);
+		Excute_Unit J = new Excute_Unit(Excute_Unit.Type_Clear);
+		J.Set_Clear_Unit("9");
+		Excute.Append_Unit(J);
+		Excute_Unit K = new Excute_Unit(Excute_Unit.Type_Clear);
+		K.Set_Clear_Unit("A");
+		Excute.Append_Unit(K);
+		Excute_Unit L = new Excute_Unit(Excute_Unit.Type_Clear);
+		L.Set_Clear_Unit("B");
+		Excute.Append_Unit(L);
+		Excute_Unit M = new Excute_Unit(Excute_Unit.Type_Clear);
+		M.Set_Clear_Unit("C");
+		Excute.Append_Unit(M);
+	}
+	
 	
 	private static String Return_matchport_Wrong = "Matching_Wrong";
 	private static String Return_matchport_Finished = "Finished";
